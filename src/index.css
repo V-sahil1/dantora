@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  /* Subtle barcode pattern separating treatment stages */
+  .barcode-pattern {
+    background: repeating-linear-gradient(90deg, #d2dbd5 0px, #d2dbd5 1.5px, transparent 1.5px, transparent 4.5px);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .glass-pill {
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Clipping box for word-by-word text reveals */
+  .line-mask {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    padding-bottom: 0.12em;
+    margin-bottom: -0.12em;
+  }
+
+  .field {
+    @apply w-full rounded-xl border-brand-charcoal/20 py-2.5 text-xs focus:border-brand-teal focus:ring-brand-teal sm:text-sm;
+  }
+
+  .field-label {
+    @apply mb-1 block text-xs font-bold uppercase tracking-wider text-brand-charcoal;
+  }
+}
